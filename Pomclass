@@ -1,0 +1,94 @@
+package frameWork;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import connfigurationPath.Configuration;
+
+public class Signup_pomRnr {
+
+public static void main(String[] args) throws InterruptedException {
+	System.setProperty("webdriver.chrome.driver", Configuration.driverpath);
+	WebDriver driver = new ChromeDriver();
+	driver.get(Configuration.appUrl);
+	
+	driver.manage().window().maximize();
+	
+	Signup_pom ss = new Signup_pom(driver);
+	
+	//TC01
+	ss.enterFirstName("Pratap");
+	ss.enterLastName("Khote");
+	ss.enterEmail("pk@gmail.com");
+	ss.enterNewPass("pass1234");
+	ss.clickOnRadioBtn();
+	ss.selectDay("11");
+	ss.selectMonth("May");
+	ss.selectYear("1995");
+	
+	Thread.sleep(2000);
+	driver.navigate().refresh();
+	
+	//TC02
+	ss.enterFirstName("PK");
+	ss.enterLastName("Khote");
+	ss.enterEmail("pk@gmail.com");
+	ss.enterNewPass("pass123467");
+	ss.clickOnRadioBtn();
+	ss.selectDay("1");
+	ss.selectMonth("Mar");
+	ss.selectYear("1999");
+	
+	//TC03
+		ss.enterFirstName("Pratik");
+		ss.enterLastName("raut");
+		ss.enterEmail("pk@gmail.com");
+		ss.enterNewPass("123445");
+		ss.clickOnRadioBtn();
+		ss.selectDay("12");
+		ss.selectMonth("Jan");
+		ss.selectYear("1996");
+		
+		Thread.sleep(2000);
+		driver.navigate().refresh();
+		
+		//TC04
+		ss.enterFirstName("Priya");
+		ss.enterLastName("patil");
+		ss.enterEmail("pp@gmail.com");
+		ss.enterNewPass("1235799");
+		ss.clickOnRadioBtn();
+		ss.selectDay("4");
+		ss.selectMonth("May");
+		ss.selectYear("1993");
+		
+		Thread.sleep(2000);
+		driver.navigate().refresh();
+		
+		//TC05
+		ss.enterFirstName("vaibhav");
+		ss.enterLastName("kudale");
+		ss.enterEmail("vk@gmail.com");
+		ss.enterNewPass("pass1234344");
+		ss.clickOnRadioBtn();
+		ss.selectDay("25");
+		ss.selectMonth("Feb");
+		ss.selectYear("1993");
+		
+		Thread.sleep(2000);
+		driver.navigate().refresh();
+		
+		//TC06
+		ss.enterFirstName("pradip");
+		ss.enterLastName("desai");
+		ss.enterEmail("pd@gmail.com");
+		ss.enterNewPass("pass1234399");
+		ss.clickOnRadioBtn();
+		ss.selectDay("29");
+		ss.selectMonth("Dec");
+		ss.selectYear("1992");
+		
+		Thread.sleep(2000);
+		driver.navigate().refresh();
+}
+}
